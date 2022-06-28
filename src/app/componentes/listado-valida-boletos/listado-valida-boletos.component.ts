@@ -109,7 +109,9 @@ export class ListadoValidaBoletosComponent implements OnInit {
       this.asignacionasientoL.push(-1);
     }
     let idv;
+    let asiento;
     datos.asientoList.forEach(value => {
+      asiento=value.nombre;
       idv=value.nombre.substring(2)
       this.asiento.push(value.nombre.substring(-20,1))
     });
@@ -127,7 +129,9 @@ export class ListadoValidaBoletosComponent implements OnInit {
            numa=Number(this.asignacionasientoL[this.asignacionasientoL.length-1])+1;
            this.asignacionasientoL.push(numa);
            this.numsasi.push(this.asientom.asientoL[numa]);
-          }
+          }else {
+           this.numsasi.push(asiento)
+         }
       }
     this.datos=datos;
     console.log(this.idvuelo)
